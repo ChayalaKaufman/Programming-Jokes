@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "junk";
+}
+
+<h2>junk</h2>
+@*@if (Model.User != null)
+    {
+        <input type="hidden" id="user-id" value="@Model.User.Id" />
+        <h4>Like</h4>
+        
+@*if (Model.Joke.Likes.Any(l => l.UserId == Model.User.Id))
+    {
+        @{bool liked = Model.Joke.Likes.First(l => l.UserId == Model.User.Id).Liked}
+
+    if (liked == true)
+        {
+            <button class="btn btn-primary" disabled>Like</button>
+            <button class="btn btn-default" id="dislike-joke" disabled data-joke-id="@Model.Joke.Id">Dislike</button>
+        }
+        else
+        {
+            <button class="btn btn-primary" id="like-joke" data-joke-id="@Model.Joke.Id">Like</button>
+            <button class="btn btn-default" disabled>Dislike</button>
+        }
+    }
+    else
+    {
+        <button class="btn btn-primary" id="like-joke" data-joke-id="@Model.Joke.Id">Like</button>
+        <button class="btn btn-default" id="dislike-joke" data-joke-id="@Model.Joke.Id">Dislike</button>
+    }*@
+
+@*}
+       else
+       {
+           <button class="btn btn-primary" id="like-joke" data-joke-id="@Model.Joke.Id">Like</button>
+           <button class="btn btn-default" id="dislike-joke" data-joke-id="@Model.Joke.Id">Dislike</button>
+       }
+    } *@

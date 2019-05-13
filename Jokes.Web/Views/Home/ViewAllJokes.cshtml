@@ -1,0 +1,17 @@
+﻿@using Jokes.Data
+@model List<Joke>
+@using System.Linq
+
+@foreach (Joke joke in Model)
+{
+<div class="row">
+    <div class="col-md-4 col-md-offset-3 well">
+        <h3>@joke.SetUp</h3>
+        <h3>@joke.Punchline</h3>
+        <h5>Likes: <span class="likes">@joke.Likes.Where(l => l.Liked == true).Count()</span></h5>
+        <h5>Dislikes: <span class="dislikes">@joke.Likes.Where(l => l.Liked == false).Count()</span></h5>
+    </div>
+</div>
+}
+
+
