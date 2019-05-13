@@ -26,12 +26,10 @@ namespace Jokes.Web.Controllers
             IndexViewModel vm = new IndexViewModel();
             vm.Joke = repo.GetRandomJoke();
 
-
             if (User.Identity.IsAuthenticated)
             {
                 var usersRepo = new UsersRepository(_connectionString);
                 vm.User = usersRepo.GetByEmail(User.Identity.Name);
-                
             }
             return View(vm);
         }
@@ -49,11 +47,5 @@ namespace Jokes.Web.Controllers
             var repo = new JokesRepository(_connectionString);
             repo.Like(jokeId, userId, liked);
         }
-
-        //public bool? GetLikeStatus(int jokeId, int userId)
-        //{
-        //    var repo = new JokesRepository(_connectionString);
-        //    return repo.GetLikeStatus(jokeId, userId);
-        //}
     }
 }

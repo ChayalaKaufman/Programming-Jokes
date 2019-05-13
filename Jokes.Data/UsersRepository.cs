@@ -29,15 +29,6 @@ namespace Jokes.Data
 
         public User GetByEmail(string email)
         {
-            //return context.Questions
-            //        .Include(q => q.User)
-            //        .ThenInclude(q => q.LikedQuestions)
-            //        .Include(q => q.Answers)
-            //        .ThenInclude(a => a.User)
-            //        .Include(q => q.Likes)
-            //        .Include(u => u.QuestionsTags)
-            //        .ThenInclude(qt => qt.Tag)
-            //        .FirstOrDefault(q => q.Id == id);
             using (var ctx = new JokesContext(_connectionString))
             {
                 return ctx.Users.Include(u => u.LikedJokes)
